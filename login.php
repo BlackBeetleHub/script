@@ -1,21 +1,35 @@
+<?php
+	function generateCode($length=6) {
+		$chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHI JKLMNOPRQSTUVWXYZ0123456789";
+		$code = "";
+		$clen = strlen($chars) - 1;  
+		while (strlen($code) < $length) {
+				$code .= $chars[mt_rand(0,$clen)];  
+		}
+		return $code;
+	}
+	
+$db = mysql_connect("localhost", "root", "");
+
+mysql_select_db("Test");
+
+if(isset($_POST["button_start"])){
+	$login=$_POST['login'];
+	$querty =mysql_query("SELECT id, password FROM users WHERE login='$login'",$db);
+	$data = mysql_fetch_array($querty);
+		if($data['password']==md5($_POST['pass'])){
+			$hash =md5(generateCode(10));
+			mysql_query("UPDATE users SET hash='".$hash."' WHERE id='".$data['id']."'",$db);
+			setcookie("id",$data['id'],time()+60*60*24*30);
+			setcookie("hash", $hash, time()+60*60*24*30);
+			header("Location: check.php"); exit();
+		}else{
+
+			print "Вы ввели неправильный логин/пароль";
+
+			}
+}
+
+?>
 
 
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Welcom</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-	<body>
-		<div id="box1">
-		<input type="submit" id="button_start" value="Sign In" href="/login.php">
-		<input type="submit" id="button_start" value="Sign Up" href="/reg.php">
-		</div>
-		
-		<div id="content">
-			Дневни́к — совокупность фрагментарных записей, которые делаются для себя, ведутся регулярно и чаще всего сопровождаются указанием даты.
-			Такие записи («записки») организуют индивидуальный опыт и как письменный жанр сопровождают становление индивидуальности в культуре, формирование «я» — параллельно с ними развиваются формы мемуаристики и автобиографии.
-		</div>
-		
-	</body>
-</html>
