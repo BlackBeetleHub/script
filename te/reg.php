@@ -2,7 +2,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Welcom</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	
 </head>
 	<body>
 		<div id="box1">
@@ -26,6 +26,8 @@
 					if($pass==$repass){
 						$pass=md5($pass);
 						$req = mysql_query("INSERT INTO `users`(`id`, `first_name`, `second_name`, `login`, `email`, `password`, `name_table`) VALUES ('','$first_name','$second_name','$login','$email','$pass','$login')") or mysql_error();
+						mysql_select_db("notes",$db);
+						$req2 = mysql_query("create table $login(id integer not null auto_increment primary key,title varchar(200),text varchar(200)) ") or mysql_error();
 					}else{
 						echo "Пароли не совпадают.";
 					}

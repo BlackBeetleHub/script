@@ -22,7 +22,7 @@ if(isset($_POST["button_start"])){
 			mysql_query("UPDATE users SET hash='".$hash."' WHERE id='".$data['id']."'",$db);
 			setcookie("id",$data['id'],time()+60*60*24*30);
 			setcookie("hash", $hash, time()+60*60*24*30);
-			header("Location: check.php"); exit();
+			header("Location: keeper.php"); exit();
 		}else{
 
 			print "Вы ввели неправильный логин/пароль";

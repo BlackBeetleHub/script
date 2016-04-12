@@ -1,7 +1,19 @@
 body{
-	background: url(/images/start_fon.jpg);
-	background-attachment:scroll;
-	background-size: cover;
+	background: url(/images/fon.jpg) fixed;
+  background-repeat: no-repeat;
+	background-attachment: fixed, fixed;
+  overflow:  hidden;
+	background-size: 100%;
+}
+
+#my{
+  top:6px;
+  border: 6px;
+  margin: 6px;
+  background: #BB1200;
+  opacity: 0.6;
+  height: 30px;
+  width: 32%;
 }
 
 #Text{
@@ -12,17 +24,49 @@ body{
 	
 	float:top;
 	top:15px;
-  
+}
+
+#bar{
+  position: relative;
+  left:30%;
+  padding: 6px;
+}
+
+#exit{
+  position: relative;
+  padding: 12px 24px;
+  left: 60%;
+  background-image: url("../images/wood.jpg");
+  border-radius: 10px;
 }
 
 #content{
+  
 	position:absolute;
-	top:25%;
-	left:35%;
-	right:15%;
-	font:24px sans-serif;
-	text-align:justify;
-	height:100%
+  left: 30%;
+  right: 5%;
+}
+
+
+
+#BlockTitle{
+  background: #BB1200;
+  opacity: 0.6;
+  height: 30px;
+  width: 32%;
+}
+
+#BlockText{
+  background: #6202FC;
+  opacity: 0.6;
+ height: 100px;
+ width: 40%;
+}
+
+#BlockBut{
+  height: 30px;
+  background-image: url("../images/wood.jpg");
+  border-radius: 10px;
 }
 
 fieldset {
