@@ -1,33 +1,41 @@
 <?php
 include("login.php");
-
 ?>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Welcom</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Notepad - Главная страница</title>
+<link type="text/css" rel="StyleSheet" href="_st/my.css" />
 </head>
-	<body>
-		
-		
-		<div id="content">
-			<div id="Text">
-			Дневни́к — совокупность фрагментарных записей, которые делаются для себя, ведутся регулярно и чаще всего сопровождаются указанием даты.
-			Такие записи («записки») организуют индивидуальный опыт и как письменный жанр сопровождают становление индивидуальности в культуре, формирование «я» — параллельно с ними развиваются формы мемуаристики и автобиографии.
-			</div>
-			<div id="box1">
-			<form method="POST" action="index.php">
-			<fieldset>
-			<legend>Вход в систему</legend>
-			<br><input type="text" name="login">
-			<br><input type="password" name="pass">
-			<br><input type="submit" name="button_start" value="Войти">
-			<a href="reg.php"><input type="submit" id="buttona_start" value="Зарегистрироваться"></a>
-			</fieldset>
-			</form>
-			</div>
-		</div>
-		
-	</body>
+<body class="body_bg">
+<div id="outer">
+<div id="container">
+<div id="title">
+<h2><a href="index.php">Notes</a></h2><a href="reg.php">Зарегистрироваться</a>
+</div></a>
+</div>
+<div id="content">
+<form method="POST" action="index.php">
+					<fieldset id="formlogin">
+					<legend>Вход в систему</legend>
+						<div id="login">
+						<br><input type="text" name="login">
+						<br><input type="password" name="pass" >
+						<br><input type="submit" name="button_start" value="Войти">
+						</div>
+					</fieldset>
+				</form>
+<br clear="all" />
+</div>
+
+<div id="footer-holder">
+<div class="footer">
+ <!-- <copy> -->Copyright Kirill Afendi &copy; 2016<!-- </copy> --><br />
+</div>
+</div>
+</div>
+</body>
 </html>
+

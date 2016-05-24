@@ -12,10 +12,6 @@ function get_cookie ( cookie_name )
     return null;
 }
 
-$.post('http://localhost/sql.php', {fun: 'select', id_user: get_cookie ("id")}, function(data, textStatus, xhr) {
-    alert(data);
-
-});
 
 $("#BlockBut").click(function(event) {
 	var title = $('#BlockTitle').val();
@@ -24,12 +20,16 @@ $("#BlockBut").click(function(event) {
 	$.post('http://localhost/sql.php', {fun: 'add',title: title, text:textb , id_user: get_cookie ("id")}, function(data, textStatus, xhr) {
         	//alert(data);
         });
-    div.click(function(event) {
-    	div.detach();
+
+	div.click(function(event) {
+		div.detach();
         $.post('../sql.php', {fun: 'delete',title: title, text:textb , id_user: get_cookie ("id")}, function(data, textStatus, xhr) {
         	/*optional stuff to do after success */
         });
-    });
+	});
 	$("#BlockText").after(div);
+	$("#my").val();
 	
 });
+
+

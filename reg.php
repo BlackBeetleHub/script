@@ -2,13 +2,20 @@
 <head>
 	<meta charset="utf-8">
 	<title>Welcom</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link type="text/css" rel="StyleSheet" href="_st/my.css" />
 </head>
-	<body>
-		<div id="box1">
-		<input type="submit" id="button_start" value="Sign In" href="/login.php">
-		</div>
+	<body class="body_bg">
+<div id="outer">
+<div id="container">
+<div id="title">
+<h2><a href="index.php">Notes</a></h2><a href="reg.php">Зарегистрироваться</a>
+</div></a>
+</div>
+
 		<div id="content">
+		<div id="box1">
+		<input type="submit" id="button_start" value="Sign In" href="login.php">
+		</div>
 			<?php
 				include("bd.php");
 				if(isset($_POST["but"])){
@@ -54,7 +61,7 @@
 				<fieldset class="fiel">
 				<legend>Пароль</legend>
 				Введите свой пароль. Внимание! Пароль чувствителен к регистру букв.
-				<br>Пароль:           <input type="password" style="position:absolute; left:35.5%;" name="pass">
+				<br>Пароль:           <input type="password" name="pass">
 				<br>Повторите пароль: <input type="password" name="repass">
 				</fieldset>
 				<fieldset class="fiel">
@@ -63,7 +70,14 @@
 				</fieldset>
 				<center><input type="submit" name="but" value="Зарегистрироваться"></center>
 			</form>
-		</div>
-		
-	</body>
+<br clear="all" />
+</div>
+
+<div id="footer-holder">
+<div class="footer">
+ <!-- <copy> -->Copyright Kirill Afendi &copy; 2016<!-- </copy> --><br />
+</div>
+</div>
+</div>
+</body>
 </html>
